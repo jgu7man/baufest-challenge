@@ -1,0 +1,14 @@
+<ng-container *ngIf="(character$ | async ) as character; else loading">
+
+  <mat-card>
+    <mat-card-title-group>
+      <img mat-card-sm-image [src]="character.image" [alt]="character.name" >
+      <mat-card-title>{{character.name}}</mat-card-title>
+      <!-- <mat-card-subtitle></mat-card-subtitle> -->
+    </mat-card-title-group>
+  </mat-card>
+
+</ng-container>
+<ng-template #loading >
+  <mat-spinner></mat-spinner>
+</ng-template>

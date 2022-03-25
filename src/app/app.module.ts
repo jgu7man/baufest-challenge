@@ -15,6 +15,9 @@ import { AsCharacterPipe, AsLocationPipe, AsEpisodePipe } from './pipes/class-ty
 import { LocationCardComponent } from './components/class/location-card/location-card.component';
 import { EpisodeCardComponent } from './components/class/episode-card/episode-card.component';
 import { PageSelecterComponent } from './components/class/page-selecter/page-selecter.component';
+import { EpisodeViewComponent } from './components/episode-view/episode-view.component';
+import { CharacterThumbnailComponent } from './components/episode-view/character-thumbnail/character-thumbnail.component';
+import { EpisodeSelecterComponent } from './components/episode-view/episode-selecter/episode-selecter.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { PageSelecterComponent } from './components/class/page-selecter/page-sel
     AsEpisodePipe,
     LocationCardComponent,
     EpisodeCardComponent,
-    PageSelecterComponent
+    PageSelecterComponent,
+    EpisodeViewComponent,
+    CharacterThumbnailComponent,
+    EpisodeSelecterComponent
   ],
   imports: [
     BrowserModule,

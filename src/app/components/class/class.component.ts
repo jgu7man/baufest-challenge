@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { combineLatest, Observable, zip } from 'rxjs';
 import { map, mergeMap, pluck, tap } from 'rxjs/operators'
 import { IList, ListClass } from 'src/app/models/list.model';
-import { ListService } from '../../services/list.service';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-class',
@@ -18,7 +18,7 @@ export class ClassComponent implements OnInit {
   
   constructor (
     private _route: ActivatedRoute,
-    private _list: ListService
+    private _api: ApiService
   ) { 
     this.listClass$ = combineLatest( [
       this._route.params,
@@ -29,7 +29,7 @@ export class ClassComponent implements OnInit {
         this.page = +queryParams.page || undefined
 
         if (!this.className) throw {text: 'La URL no es válida'}
-        return this._list.get( this.className, this.page ).pipe(
+        return this._api.get( this.className, this.page ).pipe(
           tap(list => console.log(list))
         )
       })

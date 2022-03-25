@@ -1,0 +1,21 @@
+<p *ngIf="episode" >
+  <button 
+    mat-button 
+    [disabled]="episode <= 1" 
+    (click)="navigate('prev')"
+  >
+  <mat-icon>navigate_before</mat-icon>  
+  Anterior
+  </button>
+  
+  <!-- <mat-icon>circle</mat-icon> -->
+
+  <button
+    mat-button
+    [disabled]="episode >= 51"
+    (click)="navigate('next')"
+  >
+    Siguiente
+    <mat-icon>navigate_next</mat-icon>
+  </button>
+</p>

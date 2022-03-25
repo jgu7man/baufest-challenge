@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { first } from 'rxjs/operators';
 import { ICharacter } from 'src/app/models/character.model';
 import { IEpisode } from 'src/app/models/episode.model';
-import { EpisodesService } from 'src/app/services/episodes.service';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-character-card',
@@ -14,7 +15,7 @@ export class CharacterCardComponent implements OnInit {
   episode?: IEpisode
   
   constructor (
-    private _episodes: EpisodesService
+    private _api: ApiService
   ) { }
 
   ngOnInit(): void {
@@ -27,7 +28,9 @@ export class CharacterCardComponent implements OnInit {
       const randomIndex = Math.floor( Math.random() * maxIndex )
       // const episode = this.character.episode[ randomIndex ]
       
-      this.episode = await this._episodes.getById(randomIndex)
+      this.episode = await this._api
+        .getById<IEpisode>( 'episode', randomIndex )
+        .pipe( first() ).toPromise()
     }
   }
 

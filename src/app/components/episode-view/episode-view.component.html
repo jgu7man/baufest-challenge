@@ -1,0 +1,45 @@
+<div class="container">
+
+  <ng-container *ngIf="(episode$ | async) as episode; else loading">
+    <div class="row">
+      
+      <div class="col s12 m7 l8">
+        <span>{{ episode.episode}}</span>
+        <h1>Episodio: {{ episode.name}}</h1>
+        <small>
+          <b>Creado</b>: {{ episode.created | date}}<br>
+          <b>Emisión</b>: {{ episode.air_date}}<br>
+        </small>
+      </div>
+
+      <div class="col s12 m5 l4">
+        <app-episode-selecter
+        [episode]="episode.id"
+        ></app-episode-selecter>
+      </div>
+
+    </div>
+
+
+    <div class="row">
+      <div class="col s12">
+        <h2>Personajes</h2>
+
+        <ng-container *ngIf="episode.characters as linkList">
+          <div class="row">
+            <div class="col s6 l3" *ngFor="let link of linkList">
+              <app-character-thumbnail
+              [url]="link"
+              ></app-character-thumbnail>  
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #loading >
+    <mat-spinner></mat-spinner>
+  </ng-template>
+  
+  
+</div>
