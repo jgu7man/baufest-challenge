@@ -1,4 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@200;400;500;600;700;800&display=swap');
+@import './assets/styles/responsive.scss';
+
+
 body {
   margin: 0;
+}
+html, body { height: 100%; }
+body { 
+  margin: 0; 
+  font-family: 'Prompt', sans-serif !important; 
+}
+
+h1, h2, h3, h4, h5, p, span, a {
+  font-family: 'Prompt', sans-serif !important; 
+}
+
+h1 { 
+  font-weight: 800 !important;; 
+}
+
+mat-card {
+  margin-bottom: 1em;
 }

@@ -1,0 +1,28 @@
+<mat-card *ngIf="character">
+  <mat-card-title-group>
+    <mat-card-title>{{character.name}}</mat-card-title>
+    <mat-card-subtitle>
+      
+      <b>Ubicación</b><br>
+      {{character.location.name}}<br>
+      <b>Género</b><br>
+      {{character.gender}}<br>
+
+    </mat-card-subtitle>
+    <img mat-card-md-image [src]="character.image" [alt]="character.name">
+  </mat-card-title-group>
+
+  <mat-card-content>
+    <span *ngIf="episode">
+      <b>Aparece en</b><br>
+      {{episode.name}} ({{episode.episode}})<br>
+    </span>
+  </mat-card-content>
+
+  <!-- <mat-card-actions
+  style="display: flex; justify-content:space-between;">
+    <button mat-button
+    color="accent" 
+    >Ver más</button>
+  </mat-card-actions> -->
+</mat-card>

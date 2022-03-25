@@ -1,0 +1,19 @@
+<mat-card *ngIf="location">
+  <mat-card-header>
+    <mat-card-title>{{location.name}}</mat-card-title>
+    <mat-card-subtitle>
+      <b>Tipo</b>: {{location.type}}<br>
+      <b>Dimensión</b>: {{location.dimension}}<br>
+      <b>Residentes</b>: {{location.residents.length}}<br>
+      <b>Creación</b>: {{location.created | date}}
+
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <!-- <mat-card-actions
+  style="display: flex; justify-content:space-between;">
+    <button mat-button
+    color="accent" 
+    >Ver más</button>
+  </mat-card-actions> -->
+</mat-card>

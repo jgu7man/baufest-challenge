@@ -1,0 +1,16 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.menu {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.menu a {
+  color: #fff !important;
+  text-decoration: none !important;
+  font-weight: 300 !important;
+  font-size: 14px;
+}
