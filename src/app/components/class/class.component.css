@@ -1,3 +1,7 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
 #list-container {
   display: flex;
   flex-flow: wrap;
@@ -5,4 +9,28 @@
 
 #list-container .col {
   margin: 0;
+}
+
+#searcher {
+  position: relative;
+}
+
+#searcher input {
+  font-size: 16px;
+  border-radius: 10px;
+  border: solid 1.5px #202020;
+  height: 30px;
+  padding: 2px 5px;
+}
+
+#searcher button {
+  position: absolute;
+  left: 170px;
+}
+
+.float-compare {
+  position: fixed;
+  z-index: 100;
+  right: 1em;
+  bottom: 1em;
 }

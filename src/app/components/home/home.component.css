@@ -1,0 +1,45 @@
+.container {
+  height: calc(100vh - 92px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h3, p {
+  text-align: center;
+}
+
+h1 {
+  font-size: 62px;
+}
+
+#menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.menu {
+  width: 320px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu a {
+  color: #202020 ;
+  text-decoration: none !important;
+  font-weight: 300 !important;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu a:hover {
+  color: #10ac60 !important;
+}
+
+.active {
+  color: #69f0ae !important;
+}

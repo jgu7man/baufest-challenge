@@ -1,8 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col s12">
-      <p class="center">Todo acerca de:</p>
+      <h3 class="center ">Bienvenido</h3>
       <h1 class="center">Rick & Morty Wiki</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12" id="menu-container">
+      <p [style.text-align]="'center'">Elige una clasificación para empezar</p>
+      <div class="menu">
+        <a [routerLink]="['/list/character']" routerLinkActive="active">Personajes</a>
+        <a [routerLink]="['/list/location']" routerLinkActive="active">Ubicaciones</a>
+        <a [routerLink]="['/list/episode']" routerLinkActive="active">Episodios</a>
+      </div>
     </div>
   </div>
 </div>

@@ -16,3 +16,8 @@ interface IInfo {
   pages: number,
   prev?: string
 }
+
+export interface IQueries {
+  name?: string,
+  page?: string,
+}

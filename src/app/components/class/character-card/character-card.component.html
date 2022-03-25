@@ -1,10 +1,10 @@
-<mat-card *ngIf="character">
+<mat-card class="character-card" *ngIf="character">
   <mat-card-title-group>
     <mat-card-title>{{character.name}}</mat-card-title>
     <mat-card-subtitle>
       
       <b>Ubicación</b><br>
-      {{character.location.name}}<br>
+      {{character.location?.name || 'Unknown'}}<br>
       <b>Género</b><br>
       {{character.gender}}<br>
 
@@ -15,14 +15,18 @@
   <mat-card-content>
     <span *ngIf="episode">
       <b>Aparece en</b><br>
-      {{episode.name}} ({{episode.episode}})<br>
+      <a [routerLink]="['/episode', episode.id]">
+        {{episode.name}} ({{episode.episode}})<br>
+      </a>
     </span>
   </mat-card-content>
 
-  <!-- <mat-card-actions
-  style="display: flex; justify-content:space-between;">
-    <button mat-button
-    color="accent" 
-    >Ver más</button>
-  </mat-card-actions> -->
+  <mat-checkbox 
+    class="card-selector" 
+    matTooltip="Selecciona para comparar"
+    #selector="matCheckbox"
+    [ngClass]="{'avalible': api.selecterCount > 0}"
+    [disabled]="api.selecterCount >= 3 && selector.checked == false"
+    (change)="toggleCharacter($event)"
+  ></mat-checkbox>
 </mat-card>

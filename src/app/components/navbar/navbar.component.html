@@ -1,9 +1,9 @@
 <mat-toolbar>
-  <span>Rick & Morty Wiki</span>
+  <span class="title" [routerLink]="['/']">Rick & Morty Wiki</span>
   <span class="spacer"></span>
   <span class="menu">
-    <a [routerLink]="['/list/character']">Personajes</a>
-    <a [routerLink]="['/list/location']">Ubicaciones</a>
-    <a [routerLink]="['/list/episode']">Episodios</a>
+    <a [routerLink]="['/list/character']" routerLinkActive="active">Personajes</a>
+    <a [routerLink]="['/list/location']" routerLinkActive="active">Ubicaciones</a>
+    <a [routerLink]="['/list/episode']" routerLinkActive="active">Episodios</a>
   </span>
 </mat-toolbar>

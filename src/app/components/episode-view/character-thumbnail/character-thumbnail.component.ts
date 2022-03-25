@@ -24,7 +24,7 @@ export class CharacterThumbnailComponent implements OnInit, OnDestroy {
     this.character$ = this._url.pipe(
       distinct(),
       map( url => {
-       return  url?.substr( url.lastIndexOf( '/' ) + 1 )
+       return  url?.substring( url.lastIndexOf( '/' ) + 1 )
       } ),
       mergeMap( id => {
         return this._api.getById<ICharacter>('character', +id!)

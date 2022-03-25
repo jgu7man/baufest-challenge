@@ -1,0 +1,39 @@
+table {
+  min-width: 100%;
+}
+
+.back-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.avatar-container {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-container img {
+  width: 100%;
+}
+
+.episode-row {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.episode-row:hover {
+  background: #6a6a6a;
+}
+
+.episode-cell {
+  min-width: 100px;
+}
+
+.appears-cell {
+  display: flex;
+}

@@ -18,6 +18,10 @@ import { PageSelecterComponent } from './components/class/page-selecter/page-sel
 import { EpisodeViewComponent } from './components/episode-view/episode-view.component';
 import { CharacterThumbnailComponent } from './components/episode-view/character-thumbnail/character-thumbnail.component';
 import { EpisodeSelecterComponent } from './components/episode-view/episode-selecter/episode-selecter.component';
+import { CompareComponent } from './components/compare/compare.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EpLinkPipe } from './pipes/ep-link.pipe';
+import { LinkIdPipe } from './pipes/link-id.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,10 @@ import { EpisodeSelecterComponent } from './components/episode-view/episode-sele
     PageSelecterComponent,
     EpisodeViewComponent,
     CharacterThumbnailComponent,
-    EpisodeSelecterComponent
+    EpisodeSelecterComponent,
+    CompareComponent,
+    EpLinkPipe,
+    LinkIdPipe,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,8 @@ import { EpisodeSelecterComponent } from './components/episode-view/episode-sele
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

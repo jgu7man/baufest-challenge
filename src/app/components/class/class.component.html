@@ -1,19 +1,58 @@
+<mat-toolbar *ngIf="className" color="accent">
+  <span>{{className | classNamePipe: true}}</span>
+  <span class="spacer"></span>
+  <div id="searcher">
+    <input
+      type="text"
+      name="name"
+      [formControl]="queryCtrl"
+      (keyup.Enter)="onSubmit()"
+      >
+    
+      <button color="primary" type="button" mat-icon-button (click)="onSubmit()" >
+        <mat-icon>search</mat-icon>
+      </button>
+  </div>
+</mat-toolbar>
+
+<button class="float-compare"
+  matTooltip="Comparar personajes"
+  mat-fab 
+  color="accent"
+  *ngIf="api.selecterCount > 1"
+  (click)="onCompare()"
+>
+  <mat-icon>compare_arrows</mat-icon>
+</button>
+
 <div class="container" >
-  <div class="row">
-    <div class="col s12">
-      <ng-container *ngIf="(listClass$ | async) as class; else loading">
-        <h1 *ngIf="className">{{className | classNamePipe: true}}</h1>
+  <ng-container *ngIf="(listClass$ | async) as class; else loading">
+    
+    
+    <div class="row">
+      
+      <div class="col s6">
         <p *ngIf="class.info as info">
           {{info.count}} {{className! | classNamePipe: true}}
         </p>
+      </div>
+      <div class="col s12">
+        <button 
+          mat-raised-button 
+          color="primary"
+          *ngIf="api.selecterCount > 1"
+          (click)="onCompare()"
+        >Comparar</button>
+      </div>
 
+      <div class="col s12">
+        
         <app-page-selecter
         [page]="page || 1"
         [totalPages]="class.info.pages"
         ></app-page-selecter>
-
+    
         <ng-container *ngIf="class.results as list">
-
           <div class="row" id="list-container">
             <div class="col s12 m6 l4" *ngFor="let item of list">
               <ng-container [ngSwitch]="className">
@@ -29,23 +68,20 @@
                 <ng-container *ngSwitchCase="'episode'">
                   <app-episode-card [episode]="item | asEpisode"></app-episode-card>
                 </ng-container>
-  
+    
               </ng-container>
             </div>
           </div>
-
-
         </ng-container>
 
         <app-page-selecter
         [page]="page || 1"
         [totalPages]="class.info.pages"
         ></app-page-selecter>
-
-      </ng-container>
-      <ng-template #loading >
-        <mat-spinner></mat-spinner>
-      </ng-template>
+      </div>
     </div>
-  </div>
+  </ng-container>
+  <ng-template #loading >
+    <mat-spinner></mat-spinner>
+  </ng-template>
 </div>

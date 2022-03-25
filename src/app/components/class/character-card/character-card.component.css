@@ -1,0 +1,25 @@
+.card-selector {
+  position: absolute;
+  bottom: 16px;
+  right: 22px;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.character-card:hover .card-selector {
+  opacity: 1;
+}
+
+
+.avalible {
+  opacity: 1 !important;
+}
+
+a {
+  color: #ffffffb3;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #ffffff;
+}

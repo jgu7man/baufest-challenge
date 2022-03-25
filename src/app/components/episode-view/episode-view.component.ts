@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -16,7 +17,8 @@ export class EpisodeViewComponent implements OnInit {
 
   constructor (
     private _route: ActivatedRoute,
-    private _api: ApiService
+    private _api: ApiService,
+    public location: Location
   ) { 
     this.episode$ = this._route.params.pipe(
       pluck('id'),

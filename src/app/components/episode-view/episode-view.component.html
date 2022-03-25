@@ -4,7 +4,11 @@
     <div class="row">
       
       <div class="col s12 m7 l8">
-        <span>{{ episode.episode}}</span>
+        <app-episode-selecter
+        [episode]="episode.id"
+        [epCode]="episode.episode"
+        ></app-episode-selecter>
+
         <h1>Episodio: {{ episode.name}}</h1>
         <small>
           <b>Creado</b>: {{ episode.created | date}}<br>
@@ -12,10 +16,9 @@
         </small>
       </div>
 
-      <div class="col s12 m5 l4">
-        <app-episode-selecter
-        [episode]="episode.id"
-        ></app-episode-selecter>
+      <div class="col s12 m5 l4 back-btn">
+        <button mat-raised-button color="accent"
+        (click)="location.back()" >Regresar</button>
       </div>
 
     </div>

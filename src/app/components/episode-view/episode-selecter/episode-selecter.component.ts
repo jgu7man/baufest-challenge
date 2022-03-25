@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class EpisodeSelecterComponent implements OnInit {
 
   @Input() episode?: number
+  @Input() epCode: string = ''
 
   constructor (
     private _router: Router
